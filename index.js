@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
+const router = require('./Router/router')
 require('./DB/connection')
 
 
@@ -9,7 +10,7 @@ const momsServer = express()
 
 momsServer.use(cors())
 momsServer.use(express.json())
-// newsServer.use(router)
+momsServer.use(router)
 
 const PORT = 4000 || process.env.PORT
 
